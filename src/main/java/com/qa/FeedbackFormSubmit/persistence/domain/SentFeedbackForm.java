@@ -3,8 +3,8 @@ package com.qa.FeedbackFormSubmit.persistence.domain;
 public class SentFeedbackForm {
 
 	private Long feedbackID;
-	private int cohortID;
-	private int userID;
+	private Long cohortID;
+	private Long userID;
 	private int week;
 	private int score;
 	private String question1;
@@ -24,19 +24,19 @@ public class SentFeedbackForm {
 		this.feedbackID = feedbackID;
 	}
 
-	public int getCohortID() {
+	public Long getCohortID() {
 		return cohortID;
 	}
 
-	public void setCohortID(int cohortID) {
+	public void setCohortID(Long cohortID) {
 		this.cohortID = cohortID;
 	}
 
-	public int getUserID() {
+	public Long getUserID() {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
+	public void setUserID(Long userID) {
 		this.userID = userID;
 	}
 
