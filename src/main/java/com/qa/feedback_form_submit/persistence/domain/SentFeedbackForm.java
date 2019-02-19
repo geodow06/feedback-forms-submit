@@ -1,4 +1,4 @@
-package com.qa.persistence.domain;
+package com.qa.feedback_form_submit.persistence.domain;
 
 public class SentFeedbackForm {
 
