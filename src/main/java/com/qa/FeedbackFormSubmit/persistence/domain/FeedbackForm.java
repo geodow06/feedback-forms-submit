@@ -11,8 +11,8 @@ public class FeedbackForm {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long feedbackID;
-	private int cohortID;
-	private int userID;
+	private Long cohortID;
+	private Long userID;
 	private int week;
 	private int score;
 	private String question1;
@@ -24,7 +24,7 @@ public class FeedbackForm {
 		
 	}
 	
-	public FeedbackForm(int cohortID, int userID, int week, int score, String question1, String question2, String question3, String question4) {
+	public FeedbackForm(Long cohortID, Long userID, int week, int score, String question1, String question2, String question3, String question4) {
 		this.cohortID = cohortID;
 		this.userID = userID;
 		this.week = week;
@@ -43,19 +43,19 @@ public class FeedbackForm {
 		this.feedbackID = feedbackID;
 	}
 
-	public int getCohortID() {
+	public Long getCohortID() {
 		return cohortID;
 	}
 
-	public void setCohortID(int cohortID) {
+	public void setCohortID(Long cohortID) {
 		this.cohortID = cohortID;
 	}
 
-	public int getUserID() {
+	public Long getUserID() {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
+	public void setUserID(Long userID) {
 		this.userID = userID;
 	}
 
