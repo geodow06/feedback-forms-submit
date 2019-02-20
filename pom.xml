@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.qa</groupId>
-	<artifactId>Feedback-Form-Submit</artifactId>
+	<artifactId>feedback-forms-submit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Feedback-Form-Submit</name>
 	<description>Demo project for Spring Boot</description>
