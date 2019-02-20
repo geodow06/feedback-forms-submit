@@ -50,8 +50,8 @@ public class FeedbackFormRest {
     }
     
     private void sendToQueue(FeedbackForm feedbackForm){
-        SentFeedbackForm accountToStore =  new SentFeedbackForm(feedbackForm);
-        jmsTemplate.convertAndSend("AccountQueue", accountToStore);
+        SentFeedbackForm formToStore =  new SentFeedbackForm(feedbackForm);
+        jmsTemplate.convertAndSend("FormQueue", formToStore);
     }
 }
 
