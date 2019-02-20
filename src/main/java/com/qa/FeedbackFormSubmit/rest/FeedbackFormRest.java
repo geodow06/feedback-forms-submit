@@ -28,8 +28,8 @@ public class FeedbackFormRest {
     @Autowired
     private JmsTemplate jmsTemplate;
     
-    @GetMapping("${path.getAllUserFeedbackForms")
-    public Collection<FeedbackForm> getAllUserFeedbackForms(Long userID){
+    @GetMapping("${path.getAllUserFeedbackForms}")
+    public Collection<FeedbackForm> getAllUserFeedbackForms(@PathVariable Long userID){
     	return service.getAllUserFeedbackForms(userID);
     }
     
@@ -45,7 +45,7 @@ public class FeedbackFormRest {
     }
     
     @GetMapping("${path.getAllFeedbackForms}")
-    public List<FeedbackForm> getAllFeedbackForms() {
+    public Collection<FeedbackForm> getAllFeedbackForms() {
         return service.getAllFeedbackForms();
     }
     
