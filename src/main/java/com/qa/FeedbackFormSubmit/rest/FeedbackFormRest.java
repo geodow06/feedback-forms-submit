@@ -53,10 +53,5 @@ public class FeedbackFormRest {
         SentFeedbackForm accountToStore =  new SentFeedbackForm(feedbackForm);
         jmsTemplate.convertAndSend("AccountQueue", accountToStore);
     }
-    
-//    @GetMapping("/test")
-//    public String test() {
-//    	return "testing";
-//    }
 }
 
