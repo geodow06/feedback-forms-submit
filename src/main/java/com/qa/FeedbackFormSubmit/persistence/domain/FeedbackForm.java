@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class FeedbackForm {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue
 	private Long feedbackID;
 	private Long cohortID;
 	private Long userID;
