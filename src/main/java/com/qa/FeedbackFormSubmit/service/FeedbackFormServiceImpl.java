@@ -20,13 +20,13 @@ public class FeedbackFormServiceImpl implements FeedbackFormService {
 	private FeedbackFormRepository repo;
 	
 	@Override
-	public Collection<FeedbackForm> getAllUserFeedbackForms(Long userID) {
+	public Collection<FeedbackForm> getFeedbackFormsByUserID(Long userID) {
 		Collection<FeedbackForm> feedbacksWithID = repo.findAllByUserID(userID);
 		return feedbacksWithID;
 	}
 
 	@Override
-	public FeedbackForm getAFeedbackForm(Long feedbackID) {
+	public FeedbackForm getFeedbackFormByID(Long feedbackID) {
 		Optional<FeedbackForm> feedbackForm = repo.findById(feedbackID);
 		return feedbackForm.orElseThrow(() -> new FeedbackFormSubmitNotFoundException(feedbackID.toString()));
 	}

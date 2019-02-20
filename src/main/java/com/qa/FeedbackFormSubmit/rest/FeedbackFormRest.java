@@ -28,14 +28,14 @@ public class FeedbackFormRest {
     @Autowired
     private JmsTemplate jmsTemplate;
     
-    @GetMapping("${path.getAllUserFeedbackForms}")
-    public Collection<FeedbackForm> getAllUserFeedbackForms(@PathVariable Long userID){
-    	return service.getAllUserFeedbackForms(userID);
+    @GetMapping("${path.getFeedbackFormsByUserID}")
+    public Collection<FeedbackForm> getFeedbackFormsByUserID(@PathVariable Long userID){
+    	return service.getFeedbackFormsByUserID(userID);
     }
     
-    @GetMapping("${path.getAFeedbackForm}")
-    public FeedbackForm getAFeedbackForm(@PathVariable Long feedbackID) {
-    	return service.getAFeedbackForm(feedbackID);
+    @GetMapping("${path.getFeedbackFormByID}")
+    public FeedbackForm getFeedbackFormByID(@PathVariable Long feedbackID) {
+    	return service.getFeedbackFormByID(feedbackID);
     }
     
     @PostMapping("${path.addFeedbackForm}")
@@ -54,9 +54,9 @@ public class FeedbackFormRest {
         jmsTemplate.convertAndSend("AccountQueue", accountToStore);
     }
     
-    @GetMapping("/test")
-    public String test() {
-    	return "testing";
-    }
+//    @GetMapping("/test")
+//    public String test() {
+//    	return "testing";
+//    }
 }
 
