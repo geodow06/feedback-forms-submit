@@ -51,7 +51,7 @@ public class FeedbackFormRest {
     
     private void sendToQueue(FeedbackForm feedbackForm){
         SentFeedbackForm accountToStore =  new SentFeedbackForm(feedbackForm);
-        jmsTemplate.convertAndSend("AccountQueue", accountToStore);
+        jmsTemplate.convertAndSend("FormQueue", accountToStore);
     }
     
 //    @GetMapping("/test")
