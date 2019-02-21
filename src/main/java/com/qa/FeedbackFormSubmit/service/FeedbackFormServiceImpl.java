@@ -20,8 +20,8 @@ public class FeedbackFormServiceImpl implements FeedbackFormService {
 	private FeedbackFormRepository repo;
 	
 	@Override
-	public Collection<FeedbackForm> getFeedbackFormsByUserID(Long userID) {
-		Collection<FeedbackForm> feedbacksWithID = repo.findAllByUserID(userID);
+	public Collection<FeedbackForm> getFeedbackFormsByAccountID(Long accountID) {
+		Collection<FeedbackForm> feedbacksWithID = repo.findAllByAccountID(accountID);
 		return feedbacksWithID;
 	}
 

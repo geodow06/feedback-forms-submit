@@ -7,7 +7,7 @@ import com.qa.FeedbackFormSubmit.persistence.domain.FeedbackForm;
 
 public interface FeedbackFormService {
 
-	Collection<FeedbackForm> getFeedbackFormsByUserID(Long userID);
+	Collection<FeedbackForm> getFeedbackFormsByAccountID(Long accountID);
 	
 	FeedbackForm getFeedbackFormByID(Long feedbackID);
 	

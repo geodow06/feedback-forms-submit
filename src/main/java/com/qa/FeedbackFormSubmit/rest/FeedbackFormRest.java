@@ -28,9 +28,9 @@ public class FeedbackFormRest {
     @Autowired
     private JmsTemplate jmsTemplate;
     
-    @GetMapping("${path.getFeedbackFormsByUserID}")
-    public Collection<FeedbackForm> getFeedbackFormsByUserID(@PathVariable Long userID){
-    	return service.getFeedbackFormsByUserID(userID);
+    @GetMapping("${path.getFeedbackFormsByAccountID}")
+    public Collection<FeedbackForm> getFeedbackFormsByAccountID(@PathVariable Long accountID){
+    	return service.getFeedbackFormsByAccountID(accountID);
     }
     
     @GetMapping("${path.getFeedbackFormByID}")

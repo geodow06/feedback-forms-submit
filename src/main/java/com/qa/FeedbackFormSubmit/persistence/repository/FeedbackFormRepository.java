@@ -8,6 +8,6 @@ import com.qa.FeedbackFormSubmit.persistence.domain.FeedbackForm;
 
 public interface FeedbackFormRepository extends JpaRepository<FeedbackForm, Long>{
 
-	List<FeedbackForm> findAllByUserID(Long userID);
+	List<FeedbackForm> findAllByAccountID(Long accountID);
 
 }
