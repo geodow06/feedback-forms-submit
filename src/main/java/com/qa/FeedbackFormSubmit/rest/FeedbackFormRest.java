@@ -40,7 +40,9 @@ public class FeedbackFormRest {
     
     @PostMapping("${path.addFeedbackForm}")
     public FeedbackForm addFeedbackForm(@RequestBody FeedbackForm feedbackForm) {
-    	sendToQueue(feedbackForm);
+    	
+    	SentFeedbackForm feedbackFormToSend = new SentFeedbackForm(feedbackForm);
+    	sendToQueue(feedbackFormToSend);
     	return service.addFeedbackForm(feedbackForm);
     }
     
@@ -49,8 +51,7 @@ public class FeedbackFormRest {
         return service.getAllFeedbackForms();
     }
     
-    private void sendToQueue(FeedbackForm feedbackForm){
-        SentFeedbackForm formToStore =  new SentFeedbackForm(feedbackForm);
+    private void sendToQueue(SentFeedbackForm formToStore){
         jmsTemplate.convertAndSend("FormQueue", formToStore);
     }
 }
