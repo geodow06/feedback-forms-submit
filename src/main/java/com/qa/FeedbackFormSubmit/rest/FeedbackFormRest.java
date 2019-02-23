@@ -1,13 +1,9 @@
 package com.qa.FeedbackFormSubmit.rest;
 
-import java.util.Collection;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,15 +24,6 @@ public class FeedbackFormRest {
     @Autowired
     private JmsTemplate jmsTemplate;
     
-    @GetMapping("${path.getFeedbackFormsByAccountID}")
-    public Collection<FeedbackForm> getFeedbackFormsByAccountID(@PathVariable Long accountID){
-    	return service.getFeedbackFormsByAccountID(accountID);
-    }
-    
-    @GetMapping("${path.getFeedbackFormByID}")
-    public FeedbackForm getFeedbackFormByID(@PathVariable Long feedbackID) {
-    	return service.getFeedbackFormByID(feedbackID);
-    }
     
     @PostMapping("${path.addFeedbackForm}")
     public FeedbackForm addFeedbackForm(@RequestBody FeedbackForm feedbackForm) {
@@ -44,11 +31,6 @@ public class FeedbackFormRest {
     	SentFeedbackForm feedbackFormToSend = new SentFeedbackForm(feedbackForm);
     	sendToQueue(feedbackFormToSend);
     	return service.addFeedbackForm(feedbackForm);
-    }
-    
-    @GetMapping("${path.getAllFeedbackForms}")
-    public Collection<FeedbackForm> getAllFeedbackForms() {
-        return service.getAllFeedbackForms();
     }
     
     private void sendToQueue(SentFeedbackForm formToStore){
